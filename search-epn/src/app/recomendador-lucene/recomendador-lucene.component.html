@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row" style="margin-top: 30px;">
+      <div class="col">
+        <img src="./assets/rkbExplorer.jpg" style="margin-left: 69px;">
+      </div>
+    </div>
+    <div class="row" style="margin-top: 29px;">
+      <div class="col" style="text-align: center;">
+      <h2> Search RKB Explorer Local</h2>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col" style="text-align: center;">
+        <input type="text" name="fname" style="width:650px;" [(ngModel)]="txtInput">
+        <button type="button" class="btn btn-primary" style="margin-left: 10px;height: 36px;" (click)="searchArticles()">
+          Search
+        </button>
+      </div>
+    </div>
+  
+    <div class="row" style="margin-top: 20px" *ngIf="arrayResults.length">
+      <div class="col" style="text-align: center">
+          <ul class="list-group" *ngFor="let result of arrayResults">
+              <div class="alert alert-success breadcrumb-item" role="alert">
+              <li class="breadcrumb-item" (click)="openLg(content,result)" [value]="result" > <a href="#">{{result}}</a> </li> 
+                </div>
+            </ul>    
+      </div>
+        
+    </div>
+   <!--  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+    <app-modal></app-modal> -->
+  
+    <ng-template #content let-modal size="lg" >
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Artículo Detalle</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="width:599px">
+        <form>
+          <div class="row">
+            <div class="col-3">
+              <label style="margin-left: 27px;">Autor</label>
+            </div>
+            <div class="col-9">
+              <input style="margin-left: 10px;width: 487px;"[value]='artDetail.autor'>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-3">
+                <label style="margin-left: 27px;">Fecha</label>
+              </div>
+              <div class="col-9">
+                <input style="margin-left: 10px;width: 487px;"[value]='artDetail.fecha'>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                  <label style="margin-left: 27px;">PDF</label>
+                </div>
+                <div class="col-9">
+                  <a [href]="artDetail.pdf" style="margin-left: 10px;width: 487px;" > {{artDetail.pdf}}</a> 
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-3">
+                    <label style="margin-left: 27px;">Abstract</label>
+                  </div>
+                  <div class="col-9">
+                    <textarea style="margin-left: 10px;width: 487px;height: 300px;"[value]='artDetail.abstract'>
+                      {{artDetail.abstract}}
+                      </textarea>
+                  </div>
+                </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Salir</button>
+      </div>
+    </ng-template>
+  <!--   <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+   --></div>
+  
