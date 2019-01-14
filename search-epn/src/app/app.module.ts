@@ -46,6 +46,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { RecomendadorLuceneComponent } from './recomendador-lucene/recomendador-lucene.component'
 
 @NgModule({
@@ -96,7 +97,9 @@ import { RecomendadorLuceneComponent } from './recomendador-lucene/recomendador-
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    FormsModule
+
     
   ],
   providers: [],
