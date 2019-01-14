@@ -48,7 +48,7 @@ import {
 } from '@angular/material';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { RecomendadorLuceneComponent } from './recomendador-lucene/recomendador-lucene.component'
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +98,8 @@ import { RecomendadorLuceneComponent } from './recomendador-lucene/recomendador-
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    FormsModule
+    FormsModule,
+    NgbModule
 
     
   ],
