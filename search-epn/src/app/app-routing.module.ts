@@ -5,6 +5,7 @@ import { BibliotecaComponent } from './biblioteca/biblioteca.component';
 import { MisArticulosComponent } from './mis-articulos/mis-articulos.component';
 import { RecomendacionesComponent } from './recomendaciones/recomendaciones.component';
 import { RecomendadorLuceneComponent } from './recomendador-lucene/recomendador-lucene.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'crear_mis_articulos', component:MisArticulosComponent},
   { path: 'recomendaciones', component:RecomendacionesComponent},
   { path: 'recomendaciones-lucene', component:RecomendadorLuceneComponent},
-  { path: '**', component: RecomendacionesComponent }
+  { path: '**', component: PageNotFoundComponent }
 
 
   

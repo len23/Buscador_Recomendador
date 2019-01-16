@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoajService } from '../doaj.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusquedaComponent implements OnInit {
 
-  constructor() { }
+  txtIngresado:'';
+  resultadosDoajArray:any[]=[];
+
+  constructor(private doajService:DoajService) { }
 
   ngOnInit() {
   }
 
+
+  
+  buscarDoaj(txt:string){
+    this.doajService.obtenerArticulosDoaj(txt).subscribe(
+      param => {
+        console.log('Params: ', param);
+        this.resultadosDoajArray=param.results;
+      }
+    );
+  }
 }
