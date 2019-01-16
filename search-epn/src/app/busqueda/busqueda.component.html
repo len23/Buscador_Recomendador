@@ -15,14 +15,52 @@
         <button  class="btn btn-primary" (click)="buscarDoaj(txtIngresado)">Search DOAJ</button>
     </div>
     </div>
-    <div class="container" *ngFor="let result of resultadosDoajArray" style="background: white">
+    <div class="container" *ngFor="let result of resultadosDoajArray" style="background: white; margin-top: 20px">
       <div class="row">
         <div class="col-3">
           <b>Title</b>
         </div>
         <div class="col-9">
             <p>{{result.bibjson.title}}</p>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-3">
+            <b>Abstract</b>
           </div>
+          <div class="col-9">
+              <p>{{result.bibjson.abstract}}</p>
+          </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+          <b>Author</b>
       </div>
     </div>
+    <div class="row" *ngFor='let autor of result.bibjson.author'>
+        <div class="col-3">
+        </div>
+        <div class="col-9">
+            <p>{{autor.name}}</p>
+        </div>
+  </div>
+  <div class="row">
+      <div class="col-3">
+          <b>Keywords</b>
+      </div>
+  </div>
+  <div class="row" *ngFor='let keyword of result.bibjson.keywords'>
+      <div class="col-3">
+      </div>
+      <div class="col-9">
+          <p>{{keyword}}</p>
+      </div>
+</div>
+<div class="row" style="margin-top: 40px">
+  <div class="col" style="text-align: right">
+      <button type="button" class="btn btn-primary">Sincronize with wikindx</button>
+
+  </div>
+</div>
+</div>
 </div>
