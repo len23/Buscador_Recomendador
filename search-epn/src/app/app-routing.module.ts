@@ -7,12 +7,14 @@ import { RecomendacionesComponent } from './recomendaciones/recomendaciones.comp
 import { RecomendadorLuceneComponent } from './recomendador-lucene/recomendador-lucene.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'busqueda', component:BusquedaComponent},
   { path: 'biblioteca', component:BibliotecaComponent},
   { path: 'crear_mis_articulos', component:MisArticulosComponent},
   { path: 'recomendaciones', component:RecomendacionesComponent},
   { path: 'recomendaciones-lucene', component:RecomendadorLuceneComponent},
+  { path: '**', component: RecomendacionesComponent }
+
 
   
 ];

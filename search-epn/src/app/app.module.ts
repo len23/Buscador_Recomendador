@@ -49,6 +49,9 @@ import {
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { RecomendadorLuceneComponent } from './recomendador-lucene/recomendador-lucene.component'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +60,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BibliotecaComponent,
     MisArticulosComponent,
     RecomendacionesComponent,
-    RecomendadorLuceneComponent
+    RecomendadorLuceneComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +103,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatTooltipModule,
     MatTreeModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
 
     
   ],
