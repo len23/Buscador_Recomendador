@@ -9,8 +9,14 @@ export class SearchService {
 
   constructor(private http:HttpClient) { }
 
+
+  // base_url = 'https://recommender-systems.000webhostapp.com';
+  base_url = '';
+  // url_server = '192.168.1.4'
+  url_server = 'http://localhost:8080/'
+  // base_url = ""
   getResultados(txtInput:string):Observable<any[]>{
-    const url="http://localhost:8080/JavaAPI/api/articulos/getBusquedaIEEE/?Busqueda="+txtInput;
+    const url= this.url_server+"JavaAPI/api/articulos/getBusquedaIEEE/?Busqueda="+txtInput;
    return this.http.get<any[]>(url);
   }
 

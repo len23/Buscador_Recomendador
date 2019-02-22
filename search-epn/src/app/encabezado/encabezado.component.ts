@@ -1,4 +1,6 @@
  import { Component, OnInit } from '@angular/core';
+ import {SearchService} from "../search.service";
+ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-encabezado',
@@ -7,7 +9,8 @@
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private searhService:SearchService, private modalService: NgbModal) { }
+  base_url = this.searhService.base_url
 
   ngOnInit() {
   }
