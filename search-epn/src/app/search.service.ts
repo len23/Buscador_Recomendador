@@ -20,9 +20,9 @@ export class SearchService {
    return this.http.get<any[]>(url);
   }
 
-  getDetalleArticulo(query:string):Observable<any>{
+  getDetalleArticulo(query3:string):Observable<any>{
     
-    const url="http://ieee.rkbexplorer.com/sparql/?format=json&query="+encodeURIComponent(query);
+    const url="/sparql/?format=json&query="+encodeURIComponent(query3);
     return this.http.get<any>(url)
 
   }
