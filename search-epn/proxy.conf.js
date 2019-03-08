@@ -12,8 +12,7 @@ const PROXY_CONFIG={
                 }
             }); */
            // var target = 'https://www.'+ (devName ? devName + '.' : '' ) +'rkbexplorer.com'; 
-           var target =rc.query.slice(12, 39);
-            console.log(target);
+           var target =req.headers.id;
             return target;
         },
         changeOrigin:true,

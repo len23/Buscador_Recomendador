@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+/* const httpOptions = {
+  headers: new HttpHeaders({ 'id': 'http://ieee.rkbexplorer.com' })
+}; */
 @Injectable({
   providedIn: 'root'
 })
+
 export class SearchService {
 
   constructor(private http:HttpClient) { }
@@ -21,15 +25,18 @@ export class SearchService {
   }
 
   getDetalleArticulo(query3:string):Observable<any>{
-    
+    let id='http://ieee.rkbexplorer.com';
+    let httpOptions = {
+      headers: new HttpHeaders({ 'id': id })
+    };
     const url="/sparql/?format=json&query="+encodeURIComponent(query3);
-    return this.http.get<any>(url)
+    return this.http.get<any>(url,httpOptions)
 
   }
 
   getUrl():Observable<any>{
     const url="http://localhost:3000/api/customers?filter[include][orders]]=customer&filter[where][age]=21";
-    return this.http.get<any>(url)
+    return this.http.get<any>(url,)
 
   }
 }
